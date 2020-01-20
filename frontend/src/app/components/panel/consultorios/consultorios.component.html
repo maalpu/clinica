@@ -1,0 +1,26 @@
+<div class="container-fluid" style="padding-top: 70px;">
+    <div class="row justify-content-center pb-4">
+        <a name="" id="" class="btn btn-primary" [routerLink]="['/panel/consultorio']" role="button">Agregar Consultorio</a>
+    </div>
+    <div class="row justify-content-center">
+        <table class="table col-12 col-md-7">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Piso</th>
+                    <th scope="col">Numero</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of data; let i = index">
+                <tr class="pointer" [routerLink]="['/panel/consultorio', item._id]">
+                    <!-- <tr (click)="getInputValue()"> -->
+                    <th scope="row">{{ item._id }}</th>
+                    <td>{{ item.area }}</td>
+                    <td>{{ item.piso }}</td>
+                    <td>{{ item.numero }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

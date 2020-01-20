@@ -1,0 +1,47 @@
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav,
+mat-sidenav-content {
+    padding: 0px;
+    margin: 0;
+}
+
+mat-sidenav {
+    background-color: lightcoral;
+    width: 200px;
+}
+
+.container {
+    width: 100%;
+}
+
+button i.fas.fa-bars.fa-2x {
+    color: grey !important;
+    background-color: transparent !important;
+    outline: none !important;
+    border: none;
+    box-shadow: none !important;
+}
+
+button {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.menu {
+    height: 49px;
+    background: grey;
+    color: white;
+    margin: 0;
+    border: none;
+}
+
+.mat-sidenav-content {
+    overflow-x: hidden;
+}
+
+.fixed-btn {
+    z-index: 10000 !important;
+}

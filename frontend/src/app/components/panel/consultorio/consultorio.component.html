@@ -1,0 +1,49 @@
+<div class="container-fluid" style="background-color: rgb(241, 240, 237); padding: 30px 0 0 0">
+    <div class="container">
+        <a [routerLink]="['/panel/consultorios']"><i class="fas fa-arrow-alt-circle-left fa-3x" style="color:	lightcoral"></i></a>
+        <span class="text-center" *ngIf="this.idN"><h2>Actualizar Consultorio</h2></span>
+        <span class="text-center" *ngIf="!this.idN"><h2>Agregar Consultorio</h2></span>
+        <div class="row justify-content-center">
+            <form [formGroup]="message" (ngSubmit)="this.idN?onSubmitId():onSubmit()" class="col-sm-8">
+                <div class="form-row" formGroupName="consultorios">
+                    <div class="form-group col-md-6 ">
+                        <label>ID</label>
+                        <input type="text " class="form-control rounded border border-secondary " formControlName="id" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label>Nombre</label>
+                        <input type="text " class="form-control rounded border border-secondary " formControlName="area" placeholder="Area">
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label>Piso</label>
+                        <input type="text " class="form-control rounded border border-secondary " formControlName="piso" placeholder="Piso">
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label>Numero</label>
+                        <input type="text " class="form-control rounded border border-secondary " formControlName="numero" placeholder="Numero">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success rounded enviarBtn" *ngIf="this.idN">Actualizar</button>
+
+                <button type="submit" class="btn btn-success rounded enviarBtn" *ngIf="!this.idN">Agregar</button>
+            </form>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 pt-2 pb-5">
+                <button (click)="deleteCons()" class="btn btn-danger rounded enviarBtn" *ngIf="this.idN">Eliminar</button>
+            </div>
+            <div class="alert alert-danger col-sm-8" role="alert" *ngIf="this.errors">
+                {{this.errors}}
+            </div>
+            <div class="alert alert-danger col-sm-8" role="alert" *ngIf="this.delete">
+                Eliminado con éxito!
+            </div>
+            <div class="alert alert-success col-sm-8" role="alert" *ngIf="this.edit">
+                Actualizado con éxito!
+            </div>
+            <div class="alert alert-success col-sm-8" role="alert" *ngIf="this.add">
+                Agregado con éxito!
+            </div>
+        </div>
+    </div>
+</div>
